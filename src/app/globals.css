@@ -40,6 +40,11 @@
    cursor: pointer;
 }
 
+.home_menu{
+    text-decoration: none;
+    color: black;
+}
+
 .input_cart{
     display: flex;
     align-items: center;
@@ -65,4 +70,84 @@
 .cart_icon{
     width: 24px;
     height: 24px;
+}
+
+.hero_section{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 1240px;
+    margin: 147px auto 0;
+}
+
+.left{
+    width: 596px;
+    height: 458px;
+}
+
+.title{
+    font-style: Bold;
+    font-size: 60px;
+    line-height: 64px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+.description{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    color: #00000099;
+    margin-top: 12px;
+}
+
+.button{
+    width: 210px;
+    height: 52px;
+    background-color: #245D30;
+    border-radius: 62px;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+    margin-top: 28px;
+    border: none;
+}
+
+.percent_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 46px;
+}
+
+.percent_line{
+    width: 1px;
+    height: 69px;
+    background-color: #0000001A;
+}
+
+.top_percent{
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.percent_plus{
+    color: #245D30;
+}
+
+.bottom_percent{
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0%;
+    line-height: 22px;
+    color: #00000099;
 }
