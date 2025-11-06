@@ -1,26 +1,68 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.header_row{
+    width: 1440px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 5px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.header_bottom_line{
+    margin: 10px auto 0;
+    width: 1240px;
+    height: 1px;
+    background-color: #245D3033;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.header_line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sahifalar ul{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.sahifalar ul li:hover{
+   color: #245D30;
+   cursor: pointer;
+}
+
+.input_cart{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search_inp{
+    width: 278px;
+    height: 38px;
+    border-radius: 62px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    background-color: #F0F0F0;
+    border: none;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-weight: 400;
+}
+
+.cart_icon{
+    width: 24px;
+    height: 24px;
 }
