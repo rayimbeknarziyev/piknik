@@ -2,6 +2,7 @@ import { FaTent } from "react-icons/fa6";
 import { RiSofaLine } from "react-icons/ri";
 import { FaKitchenSet } from "react-icons/fa6";
 import Product from "./Product";
+import Link from "next/link";
 
 export default function Products() {
   return (
@@ -41,11 +42,13 @@ export default function Products() {
         <Product />
         <Product />
         <Product />
-        <Product /> 
-        <Product /> 
-        <Product /> 
+        <Product />
+        <Product />
+        <Product />
       </div>
-      <button className="see_all_btn">Hammasini ko‘rish</button>
+      <Link href={"/products"}>
+        <button className="see_all_btn">Hammasini ko‘rish</button>
+      </Link>
     </div>
   );
 }
