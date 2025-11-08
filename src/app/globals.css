@@ -151,3 +151,129 @@
     line-height: 22px;
     color: #00000099;
 }
+
+.products_categories{
+    margin: 155px auto 0;
+    width: 1340px;
+}
+
+.product_title{
+    text-align: center;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 50px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.buton_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 67px;
+}
+
+.categories_button{
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.categories_button:hover{
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.categories_button_2:hover{
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.categories_button_2{
+    width: 310px;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.product{
+    width: 295px;
+    height: 408px;
+    margin-top: 70px;
+}
+
+.image_product{
+    width: 295px;
+    height: 298px;
+    background-color: #e9f8ec;
+    border-radius: 15px;
+}
+
+.product_name{
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+    margin-top: 17px;
+}
+
+.product_icon_price{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product_price{
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #000000;
+}
+
+.product_icon{
+    width: 26px;
+    height: 26px;
+}
+
+.products_wrap{
+    width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.raiting{
+    margin-top: 10px;
+}
