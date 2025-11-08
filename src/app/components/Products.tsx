@@ -45,6 +45,7 @@ export default function Products() {
         <Product /> 
         <Product /> 
       </div>
+      <button className="see_all_btn">Hammasini ko‘rish</button>
     </div>
   );
 }
