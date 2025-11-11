@@ -34,17 +34,6 @@ export default function Products() {
       </div>
       <div className="products_wrap">
         <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
       </div>
       <Link href={"/products"}>
         <button className="see_all_btn">Hammasini ko‘rish</button>

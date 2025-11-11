@@ -1,22 +1,48 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { MdAddShoppingCart } from "react-icons/md";
+import { ProductType } from "../type";
+import axios from "axios";
 
 export default function Product() {
+  const [products, setProducts] = useState<ProductType[]>([]);
+
+  function getProducts() {
+    axios
+      .get("https://690f1e9445e65ab24ac29473.mockapi.io/products")
+      .then((res) => {
+        setProducts(res.data);
+      })
+      .catch((err) => console.error("Xatolik:", err));
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
-    <div className="product">
-      <div className="image_product">
-        <Image alt="" src="/iamge_product.png" width={295} height={298} />
-      </div>
-      <h1 className="product_name">Chodir</h1>
-      <div className="raiting">
-        <Image alt="" src="/raiting.png" width={150} height={19} />
-      </div>
-      <div className="product_icon_price">
-        <h3 className="product_price">$120</h3>
-        <div>
-          <MdAddShoppingCart className="product_icon" />
-        </div>
-      </div>
+    <div className="product_wrapper">
+      {products.map((product) => {
+        return (
+          <div className="product" key={product.id}>
+            <div className="image_product">
+              <img className="product_image" src={product.images} alt="" />
+            </div>
+            <h1 className="product_name">{product.title}</h1>
+            <div className="raiting">
+              <p>{product.rating}</p>
+            </div>
+            <div className="product_icon_price">
+              <h3 className="product_price">${product.price}</h3>
+              <div>
+                <MdAddShoppingCart className="product_icon" />
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
