@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MdAddShoppingCart } from "react-icons/md";
 import { ProductType } from "../type";
@@ -27,9 +27,15 @@ export default function Product() {
       {products.map((product) => {
         return (
           <div className="product" key={product.id}>
-            <div className="image_product">
-              <img className="product_image" src={product.images} alt="" />
-            </div>
+            <Link href={`/products/${product.id}`} key={product.id}>
+              <div className="image_product">
+                <img
+                  className="product_image"
+                  src={product.images[0]}
+                  alt={product.title}
+                />
+              </div>
+            </Link>
             <h1 className="product_name">{product.title}</h1>
             <div className="raiting">
               <p>{product.rating}</p>

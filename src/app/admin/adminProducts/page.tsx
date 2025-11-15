@@ -123,7 +123,7 @@ export default function Product() {
                 >
                   x
                 </button>
-                <button className="btn btn-warning">edit  </button>
+                <button className="btn btn-warning">edit</button>
               </td>
             </tr>
           ))}
@@ -150,7 +150,7 @@ export default function Product() {
           type="text"
           placeholder="Title"
           className="form-control mb-2"
-        />
+        />  
         <input
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -164,7 +164,7 @@ export default function Product() {
           type="number"
           placeholder="Rating"
           className="form-control mb-2"
-        />
+        />  
         <input
           value={price}
           onChange={(e) =>
