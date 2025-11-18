@@ -36,7 +36,9 @@ export default function Header() {
             type="text"
             placeholder="Search for products..."
           />
-          <AiOutlineShoppingCart className="cart_icon" />
+          <Link href={"/cart"}>
+            <AiOutlineShoppingCart className="cart_icon" />
+          </Link>
         </div>
       </div>
       <div className="header_bottom_line"></div>

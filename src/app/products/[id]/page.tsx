@@ -3,6 +3,8 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
 
 interface ProductType {
   id: number;
@@ -37,35 +39,39 @@ export default function Page() {
   if (!product) return <h1>Mahsulot topilmadi</h1>;
 
   return (
-    <div className="single_product_page">
-      <div className="left_images">
-        <div className="thumbnail_wrapper">
-          {product.images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`Thumbnail ${index}`}
-              className={`thumbnail ${img === mainImage ? "active" : ""}`}
-              onClick={() => setMainImage(img)}
-            />
-          ))}
+    <div>
+      <Header />
+      <div className="single_product_page">
+        <div className="left_images">
+          <div className="thumbnail_wrapper">
+            {product.images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Thumbnail ${index}`}
+                className={`thumbnail`}
+                onClick={() => setMainImage(img)}
+              />
+            ))}
+          </div>
+          <img src={mainImage} className="big_image" alt={product.title} />
         </div>
-        <img src={mainImage} className="big_image" alt={product.title} />
-      </div>
-      <div className="right_info">
-        <h1>{product.title}</h1>
-        <div className="rating">⭐ {product.rating}/5</div>
-        <div className="price_box">
-          <h2>${product.price}</h2>
+        <div className="right_info">
+          <h1>{product.title}</h1>
+          <div className="rating">⭐ {product.rating}/5</div>
+          <div className="price_box">
+            <h2>${product.price}</h2>
+          </div>
+          <p className="description">{product.description}</p>
+          <button className="add_to_cart_btn">Add to Cart</button>
+          <br />
+          <br />
+          <Link href={"/"}>
+            <button className="btn btn-primary">Home</button>
+          </Link>
         </div>
-        <p className="description">{product.description}</p>
-        <button className="add_to_cart_btn">Add to Cart</button>
-        <br />
-        <br />
-        <Link href={"/"}>
-          <button className="btn btn-primary">Home</button>
-        </Link>
       </div>
+      <Footer />
     </div>
   );
 }

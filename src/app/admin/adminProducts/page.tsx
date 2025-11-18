@@ -10,11 +10,17 @@ export default function Product() {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [open, setOpen] = useState(false);
 
-  const [image, setImage] = useState("");
+  // har biri alohida state
+  const [image1, setImage1] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [image4, setImage4] = useState("");
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState("");
   const [price, setPrice] = useState<number | "">("");
+  const [category, setCategory] = useState("");
 
   const api = "https://690f1e9445e65ab24ac29473.mockapi.io/products";
 
@@ -30,15 +36,19 @@ export default function Product() {
   }, []);
 
   function handleSave() {
-    if (!title || !price || !image)
+    if (!title || !price || !image1 || !category) {
       return alert("Iltimos, barcha maydonlarni to‘ldiring!");
+    }
+
+    const images = [image1, image2, image3, image4].filter((img) => img !== "");
 
     const newProduct = {
       title,
       description,
       rating,
       price,
-      images: image,
+      images,
+      category,
     };
 
     axios
@@ -63,7 +73,11 @@ export default function Product() {
     setDescription("");
     setRating("");
     setPrice("");
-    setImage("");
+    setCategory("");
+    setImage1("");
+    setImage2("");
+    setImage3("");
+    setImage4("");
   }
 
   return (
@@ -96,7 +110,8 @@ export default function Product() {
             <th>Description</th>
             <th>Rating</th>
             <th>Price</th>
-            <th>Image</th>
+            <th>Category</th>
+            <th>Images</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -108,11 +123,12 @@ export default function Product() {
               <td>{product.description}</td>
               <td>{product.rating}</td>
               <td>{product.price}</td>
+              <td>{(product as any).category}</td>
               <td>
                 <img
-                  src={(product as any).images || (product as any).image}
-                  width={70}
-                  alt={product.title}
+                  src={product.images[0]}
+                  width={50}
+                  height={50}
                   style={{ borderRadius: "4px" }}
                 />
               </td>
@@ -138,19 +154,41 @@ export default function Product() {
         <h4 className="text-center mt-3">Add Product</h4>
 
         <input
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
+          value={image1}
+          onChange={(e) => setImage1(e.target.value)}
           type="text"
-          placeholder="Image URL"
-          className="form-control mb-2 mt-3"
+          placeholder="First Image URL"
+          className="form-control mb-2 mt-2"
         />
+        <input
+          value={image2}
+          onChange={(e) => setImage2(e.target.value)}
+          type="text"
+          placeholder="Second Image URL"
+          className="form-control mb-2 mt-2"
+        />
+        <input
+          value={image3}
+          onChange={(e) => setImage3(e.target.value)}
+          type="text"
+          placeholder="Third Image URL"
+          className="form-control mb-2 mt-2"
+        />
+        <input
+          value={image4}
+          onChange={(e) => setImage4(e.target.value)}
+          type="text"
+          placeholder="Fourth Image URL"
+          className="form-control mb-2 mt-2"
+        />
+
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
           placeholder="Title"
           className="form-control mb-2"
-        />  
+        />
         <input
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -164,7 +202,7 @@ export default function Product() {
           type="number"
           placeholder="Rating"
           className="form-control mb-2"
-        />  
+        />
         <input
           value={price}
           onChange={(e) =>
@@ -175,7 +213,19 @@ export default function Product() {
           className="form-control mb-2"
         />
 
-        <button className="btn btn-success w-100" onClick={handleSave}>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="custom-select mb-2"
+        >
+          <option value="">Kategoriya tanlang</option>
+          <option value="chodir">Chodirlar</option>
+          <option value="mebel">Mebel</option>
+          <option value="oshxona">Oshxona jihozlari</option>
+          <option value="yotoqxona">Yotish uchun sumkalar</option>
+        </select>
+
+        <button className="btn btn-primary w-100 mt-2" onClick={handleSave}>
           Save
         </button>
       </Rodal>

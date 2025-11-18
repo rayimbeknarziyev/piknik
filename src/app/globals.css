@@ -222,6 +222,9 @@
     width: 295px;
     height: 408px;
     margin-top: 70px;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 .image_product{
@@ -465,7 +468,7 @@ ul{
 }
 
 .admin_btn{
-    width: 350px;
+    width: 300px;
     height: 50px;
     border-radius: 12px;
     background-color: #245D30;
@@ -553,12 +556,18 @@ img {
     font-size: 15px;
 }
 
+.categories_button.active {
+    border: none;
+    background-color: black;
+    color: white;
+  }
+
 .form-control{
     width: 385px;
     height: 35px;
     border-radius: 10px;
     border: 1px solid #828282;
-    color: #F9F9F9;
+    color: black;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px;
@@ -665,3 +674,219 @@ img {
     border: 1px solid;
 
   }
+  .thumbnail:hover{
+    cursor: pointer;
+  }
+
+  .w-100{
+    width: 100%;
+  }
+
+  .custom-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .custom-select:hover {
+    border-color: #000000;
+  }
+  
+  .custom-select:focus {
+    border-color: #000000;
+    box-shadow: 0 0 3px rgba(13, 110, 253, 0.4);
+  }
+  
+
+  .admin {
+    display: flex;
+    position: relative;
+  }
+  
+  .admin_sidebar {
+    width: 340px;
+    background: #1f1f1f;
+    color: white;
+    height: 100vh;
+    transition: 0.3s ease;
+  }
+  
+  .admin_sidebar.open_sidebar {
+    transform: translateX(0);
+  }
+  
+  .admin_sidebar {
+    transform: translateX(-340px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+
+  
+  .admin_outlet {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .sidebar_toggle_btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: black;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .sidebar_toggle_btn:hover {
+    background: #333;
+  }
+  
+  
+  .product_icon_price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .product_icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .cart_container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .cart_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .cart_table th,
+  .cart_table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .cart_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .cart_form input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .cart_form button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0070f3;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .order_card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .btn_back {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+
+  .cart_page {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  .cart_content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .cart_table_wrapper {
+    flex: 3; 
+  }
+  
+  .cart_form_wrapper {
+    flex: 1; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cart_form_wrapper input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .cart_form_wrapper button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0070f3;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .cart_table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cart_table th,
+  .cart_table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .btn_back {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
