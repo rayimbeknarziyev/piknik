@@ -19,6 +19,20 @@ export default function AdminOrders() {
     setOrders(savedOrders);
   }, []);
 
+  const completeOrder = (index: number) => {
+    const order = orders[index];
+    const newOrders = [...orders];
+    newOrders.splice(index, 1);
+    setOrders(newOrders);
+    localStorage.setItem("orders", JSON.stringify(newOrders));
+
+    const savedDelivered = localStorage.getItem("delivered")
+      ? JSON.parse(localStorage.getItem("delivered")!)
+      : [];
+    savedDelivered.push(order);
+    localStorage.setItem("delivered", JSON.stringify(savedDelivered));
+  };
+
   return (
     <div className="admin_orders">
       <h2>Barcha zakazlar</h2>
@@ -36,6 +50,7 @@ export default function AdminOrders() {
                   <th>Rasm</th>
                   <th>Nomi</th>
                   <th>Narxi</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -46,6 +61,14 @@ export default function AdminOrders() {
                     </td>
                     <td>{item.title}</td>
                     <td>${item.price}</td>
+                    <td>
+                      <button
+                        onClick={() => completeOrder(idx)}
+                        className="btn btn-primary"
+                      >
+                        Completed
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>

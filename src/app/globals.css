@@ -890,3 +890,10 @@ img {
     cursor: pointer;
   }
   
+
+  .btn-danger-2{
+        background-color: red  ;
+        color: white;
+        padding: 15px;
+        font-size: 15px;    
+  }
