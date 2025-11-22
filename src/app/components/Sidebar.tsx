@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { AiOutlineHome } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
+import { AiFillProduct } from "react-icons/ai";
+import { FaPhone } from "react-icons/fa6";
+import { FaBagShopping } from "react-icons/fa6";
+
 
 export default function Sidebar() {
   return (
@@ -10,10 +13,15 @@ export default function Sidebar() {
       </div>
       <div className="link_buttons">
         <Link href={"/admin/adminProducts"}>
-          <button className="admin_btn">products</button>
+          <button className="admin_btn">
+            <AiFillProduct />
+            products
+          </button>
         </Link>
         <Link href={"/admin/adminOrders"}>
-          <button className="admin_btn">orders</button>
+          <button className="admin_btn">
+            <FaBagShopping /> orders
+          </button>
         </Link>
         <Link href={"/admin/adminDeliver"}>
           <button className="admin_btn">
@@ -23,10 +31,10 @@ export default function Sidebar() {
         <Link href={"/admin/adminPosts"}>
           <button className="admin_btn">posts</button>
         </Link>
-        <Link href={"/"}>
+        <Link href={"/admin/adminContact"}>
           <button className="admin_btn">
-            <AiOutlineHome />
-            home
+            <FaPhone />
+            contact
           </button>
         </Link>
       </div>

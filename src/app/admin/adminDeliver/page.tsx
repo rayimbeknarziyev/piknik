@@ -9,7 +9,7 @@ interface Order {
   items: any[];
 }
 
-export default function AdminDeliver() {
+export default function page () {
   const [delivered, setDelivered] = useState<Order[]>([]);
 
   useEffect(() => {

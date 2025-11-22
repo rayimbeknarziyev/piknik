@@ -479,6 +479,10 @@ ul{
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .admin_btn:hover{
@@ -892,8 +896,143 @@ img {
   
 
   .btn-danger-2{
-        background-color: red  ;
-        color: white;
-        padding: 15px;
-        font-size: 15px;    
+    background-color: red;
+    color: white;
+    padding: 15px;
+    font-size: 15px;    
   }
+
+  .contact_section{
+    width: 1240px;
+    height: 535px;
+    display: flex;
+    align-items: center;
+    margin: 90px auto;
+  }
+
+.left_contact{
+  width: 570px;
+  height: 388px;
+}
+
+.contact_title{
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-weight: 700;
+  width: 570px;
+  font-size: 50px;
+}
+
+.contact_p{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: #011334;
+  width: 395px;
+  margin-top: 28px;  
+}
+
+.location_contact{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 31px;
+}
+
+.contact_icon{
+  color: #245D30;
+  font-size: 20px;
+}
+
+.location_contact_title{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: #011334;
+  width: 332px;  
+}
+
+.right_contact{
+  width: 565px;
+  height: 535px;
+  border-radius: 30px;
+  border: 1px solid #BDBDBD;
+  padding: 50px;
+  text-align: center;
+}
+
+
+.name_contact_inp{
+    width: 222px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #828282;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    line-height: 26px;
+    font-weight: 400;  
+    color:#828282;
+    letter-spacing: 0%;
+}
+.name_contact_inp:hover{
+  border: 1px solid #245D30;
+}
+
+.name_inp_wrapper{
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  justify-content: center;
+}
+
+.email_inp_contact{
+  width: 480px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #828282;
+  color:#828282;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;  
+}
+
+.email_inp_contact2{
+  width: 450px;
+  height: 140px;
+  border-radius: 10px;
+  border: 1px solid #828282;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  font-weight: 400;  
+  color:#828282;
+}
+
+.contact_send_btn{
+  width: 465px;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  background-color: #245D30;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: white;
+  margin-top: 30px;
+}
+
+.contact_send_btn:hover{
+  cursor: pointer;
+  background-color: #245d30dc;
+}
