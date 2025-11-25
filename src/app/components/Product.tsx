@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { MdAddShoppingCart } from "react-icons/md";
 import { ProductType } from "../type";
 import axios from "axios";
+import Image from "next/image";
 
 export default function Product({ category }: { category: string }) {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -39,11 +40,7 @@ export default function Product({ category }: { category: string }) {
         <div className="product" key={product.id}>
           <Link href={`/products/${product.id}`}>
             <div className="image_product">
-              <img
-                className="product_image"
-                src={product.images[0]}
-                alt={product.title}
-              />
+              <Image src={product.images[0]} width={295} height={298} alt=""></Image>
             </div>
           </Link>
 

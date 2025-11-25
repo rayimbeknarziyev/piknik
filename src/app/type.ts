@@ -8,3 +8,10 @@ export type ProductType = {
     category: string
     images: string
 }
+
+export type updated = {
+    id: number;
+    title: string;
+    image: string;
+    date: string;
+  }

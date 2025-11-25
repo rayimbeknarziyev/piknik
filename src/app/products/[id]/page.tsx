@@ -36,6 +36,15 @@ export default function Page() {
       .catch((err) => console.error(err));
   }, [id]);
 
+  function addToCart(product: ProductType) {
+    const cart = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart")!)
+      : [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Mahsulot savatga qo‘shildi!");
+  }
+
   if (!product) return <h1>Mahsulot topilmadi</h1>;
 
   return (
@@ -63,7 +72,12 @@ export default function Page() {
             <h2>${product.price}</h2>
           </div>
           <p className="description">{product.description}</p>
-          <button className="add_to_cart_btn">Add to Cart</button>
+          <button
+            className="add_to_cart_btn"
+            onClick={() => addToCart(product)}
+          >
+            Add to Cart
+          </button>
           <br />
           <br />
           <Link href={"/"}>

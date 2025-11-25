@@ -20,7 +20,7 @@ export default function AdminContactPage() {
         <table className="contact_table">
           <thead className="contact_table_thead">
             <tr>
-              <th>#</th>
+              <th>№</th>
               <th>Name</th>
               <th>Last Name</th>
               <th>Email</th>
@@ -30,14 +30,14 @@ export default function AdminContactPage() {
           </thead>
 
           <tbody>
-            {messages.map((msg: any, index) => (
-              <tr key={msg.id}>
+            {messages.map((message: any, index) => (
+              <tr key={message.id}>
                 <td>{index + 1}</td>
-                <td>{msg.firstName}</td>
-                <td>{msg.lastName}</td>
-                <td>{msg.email}</td>
-                <td>{msg.phone}</td>
-                <td>{msg.message}</td>
+                <td>{message.firstName}</td>
+                <td>{message.lastName}</td>
+                <td>{message.email}</td>
+                <td>{message.phone}</td>
+                <td>{message.message}</td>
               </tr>
             ))}
           </tbody>

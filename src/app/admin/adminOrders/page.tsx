@@ -42,7 +42,11 @@ export default function page() {
         orders.map((order, idx) => (
           <div key={idx} className="order_card">
             <h3>
-              {order.name} | {order.phone} | {order.location}
+              Ism: {order.name} 
+              <br />
+              Telefon raqami: {order.phone}
+              <br />
+               Lokatsiya: {order.location}
             </h3>
             <table>
               <thead>

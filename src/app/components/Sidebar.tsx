@@ -34,7 +34,7 @@ export default function Sidebar() {
         <Link href={"/admin/adminContact"}>
           <button className="admin_btn">
             <FaPhone />
-            contact
+            Messages
           </button>
         </Link>
       </div>

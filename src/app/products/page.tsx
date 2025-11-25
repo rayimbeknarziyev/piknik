@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { FaTent } from "react-icons/fa6";
 import { RiSofaLine } from "react-icons/ri";
@@ -43,6 +43,7 @@ export default function page() {
               className="categories_button_2"
               onClick={() => setActiveCategory("yotoqxona")}
             >
+              {" "}
               <RiSofaLine /> Yotish uchun sumkalar
             </button>
           </div>
