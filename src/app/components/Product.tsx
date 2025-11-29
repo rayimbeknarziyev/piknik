@@ -7,7 +7,7 @@ import { ProductType } from "../type";
 import axios from "axios";
 import Image from "next/image";
 
-export default function Product({ category }: { category: string }) {
+export default function  Product({ category }: { category: string }) {
   const [products, setProducts] = useState<ProductType[]>([]);
 
   function getProducts() {

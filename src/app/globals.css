@@ -15,9 +15,77 @@
     padding: 5px;
 }
 
+@media (max-width: 1465px) {
+  .header_row{
+    width: 1240px;
+  }
+  .header_bottom_line{
+    width: 1040px;
+  }
+}
+
+@media (max-width: 1260px) {
+  .header_row{
+    width: 1040px;
+  }
+  .header_bottom_line{
+    width: 740px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .header_row{
+    width: 840px;
+  }
+  .header_bottom_line{
+    width: 740px;
+  }
+}
+
+@media (max-width: 860px) {
+  .header_row{
+    width: 640px;
+  }
+  .header_bottom_line{
+    width: 440px;
+  }
+  .sahifalar{
+    display: none;
+  }
+}
+
+@media (max-width: 660px) {
+  .header_row{
+    width: 440px;
+  }
+  .header_bottom_line{
+    width: 340px;
+  }
+  .sahifalar{
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .header_row{
+    width: 240px;
+  }
+  .header_bottom_line{
+    width: 140px;
+  }
+  .sahifalar{
+    display: none;
+  }
+  .search_inp{
+    display: none;
+  }
+  
+}
+
+
 .header_bottom_line{
     margin: 10px auto 0;
-    width: 1240px;
+    max-width: 1240px;
     height: 1px;
     background-color: #245D3033;
 }
@@ -154,7 +222,7 @@
 
 .products_categories{
     margin: 155px auto 0;
-    width: 1340px;
+    width: 1440px;
 }
 
 .product_title{
@@ -267,7 +335,7 @@
 }
 
 .products_wrap{
-    width: 1240px;
+    width: 1440px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -277,7 +345,7 @@
 }
 
 .product_wrapper{
-    width: 1240px;
+    width: 1340px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -356,9 +424,7 @@
     color: #151515;
 }
 
-.question_plus{
-    font-size: 35px;
-}
+
 
 .footer{
     margin: 130px auto 0;
@@ -445,6 +511,10 @@ ul{
     gap: 10px;
 }
 
+li:hover{
+  cursor: pointer;
+}
+  
 .sidebar{
     border-right: 1px solid;
     text-align: center;
@@ -1216,4 +1286,153 @@ img {
 
 .blog_card{
   width: 380px;
+}
+
+.cart_products_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.cart_product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  gap: 14px;
+  border: 1px solid #eee;
+}
+
+.cart_img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart_info {
+  flex: 1;
+}
+
+.cart_title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cart_price {
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 44px;
+}
+
+.cart_actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f6f7f8;
+  padding: 6px 10px;
+  border-radius: 30px;
+}
+
+.qty_btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.qty_value {
+  font-size: 16px;
+}
+
+.delete_btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+  color: #e64545;
+}
+
+
+.order_btn_cart{
+  width: 357px;
+  height: 45px;
+  border-radius: 62px;
+  background-color: #245D30;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+.coment_section {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.coment_title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion_item {
+  background: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+}
+
+.question_title {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.question_plus {
+  font-size: 22px;
+  font-weight: 500;
+  color: black;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  padding: 0 20px;
+  transition: 0.3s ease;
+  border-top: 1px solid transparent;
+}
+
+.answer.open {
+  max-height: 200px;
+  padding: 15px 20px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.answer p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
 }

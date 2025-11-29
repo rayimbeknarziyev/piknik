@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { IoTrashSharp } from "react-icons/io5";
 
 interface Order {
   name: string;
@@ -20,8 +21,47 @@ export default function Cart() {
     const savedCart = localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart")!)
       : [];
-    setCartItems(savedCart);
+
+    const fixedCart = savedCart.map((item: any) => ({
+      ...item,
+      qty: item.qty ? item.qty : 1,
+    }));
+
+    setCartItems(fixedCart);
+    localStorage.setItem("cart", JSON.stringify(fixedCart));
   }, []);
+
+  function increaseQty(id: number) {
+    const updated = cartItems.map((item) => {
+      if (item.id === id) {
+        return { ...item, qty: item.qty + 1 };
+      }
+      return item;
+    });
+
+    setCartItems(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  }
+
+  function decreaseQty(id: number) {
+    const updated = cartItems.map((item) => {
+      if (item.id === id) {
+        const newQty = item.qty - 1;
+        return { ...item, qty: newQty < 1 ? 1 : newQty };
+      }
+      return item;
+    });
+
+    setCartItems(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  }
+
+  function deleteItem(id: number) {
+    const updated = cartItems.filter((item) => item.id !== id);
+
+    setCartItems(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  }
 
   function handleSave() {
     if (!name || !phone || !location)
@@ -53,32 +93,46 @@ export default function Cart() {
   return (
     <div className="cart_page">
       <h2>Savat</h2>
+
       <div className="cart_content">
-        <div className="cart_table_wrapper">
-          {cartItems.length === 0 ? (
-            <p>Savat bo'sh</p>
-          ) : (
-            <table className="cart_table">
-              <thead>
-                <tr>
-                  <th>Rasm</th>
-                  <th>Nomi</th>
-                  <th>Narxi</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cartItems.map((item, idx) => (
-                  <tr key={idx}>
-                    <td>
-                      <img src={item.images[0]} alt={item.title} width={50} />
-                    </td>
-                    <td>{item.title}</td>
-                    <td>${item.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+        <div className="cart_products_wrapper">
+          {cartItems.map((item, index) => (
+            <div className="cart_product" key={index}>
+              <img
+                src={item.images ? item.images[0] : item.img}
+                alt={item.title || item.name}
+                className="cart_img"
+              />
+
+              <div className="cart_info">
+                <p className="cart_title">{item.title || item.name}</p>
+                <p className="cart_price">${item.price}</p>
+              </div>
+
+              <div className="cart_actions">
+                <button
+                  className="qty_btn"
+                  onClick={() => decreaseQty(item.id)}
+                >
+                  −
+                </button>
+                <span className="qty_value">{item.qty}</span>
+                <button
+                  className="qty_btn"
+                  onClick={() => increaseQty(item.id)}
+                >
+                  +
+                </button>
+              </div>
+
+              <button
+                className="delete_btn"
+                onClick={() => deleteItem(item.id)}
+              >
+                <IoTrashSharp />
+              </button>
+            </div>
+          ))}
         </div>
 
         <div className="cart_form_wrapper">
@@ -89,19 +143,24 @@ export default function Cart() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+
           <input
             type="text"
             placeholder="Telefon raqam"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
+
           <input
             type="text"
             placeholder="Manzil"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          <button onClick={handleSave}>Save</button>
+
+          <div className="order_btn_cart" onClick={handleSave}>
+            Save
+          </div>
         </div>
       </div>
 
