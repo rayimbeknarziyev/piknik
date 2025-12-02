@@ -10,10 +10,9 @@ export default function AdminPage() {
     const isAuth = localStorage.getItem("admin-auth");
 
     if (isAuth !== "true") {
-      router.push("/login");
+      router.push("/login/adminProducts");
     }
   }, [router]);
 
   return <div className="admin">Admin panel</div>;
 }
- 
