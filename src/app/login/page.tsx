@@ -14,7 +14,7 @@ export default function LoginPage() {
 
     if (email === "admin@gmail.com" && pass === "admin1234") {
       localStorage.setItem("admin-auth", "true");
-      router.push("/admin");
+      router.push("/admin/adminProducts");
     } else {
       setError("Login yoki parol noto‘g‘ri!");
     }
