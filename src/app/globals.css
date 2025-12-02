@@ -185,6 +185,9 @@
     margin-top: 28px;
     border: none;
 }
+.button:hover{
+  cursor: pointer;
+}
 
 .percent_wrapper{
     display: flex;
@@ -990,6 +993,11 @@ img {
   font-weight: 700;
   width: 570px;
   font-size: 50px;
+}
+
+.contact_png{
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .contact_p{

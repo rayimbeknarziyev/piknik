@@ -7,12 +7,12 @@ import { ProductType } from "../type";
 import axios from "axios";
 import Image from "next/image";
 
-export default function  Product({ category }: { category: string }) {
+export default function Product({ category }: { category: string }) {
   const [products, setProducts] = useState<ProductType[]>([]);
 
   function getProducts() {
     axios
-      .get("https://690f1e9445e65ab24ac29473.mockapi.io/products")
+      .get(`${process.env.NEXT_PUBLIC_API}/products`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Xatolik:", err));
   }
@@ -40,7 +40,12 @@ export default function  Product({ category }: { category: string }) {
         <div className="product" key={product.id}>
           <Link href={`/products/${product.id}`}>
             <div className="image_product">
-              <Image src={product.images[0]} width={295} height={298} alt=""></Image>
+              <Image
+                src={product.images[0]}
+                width={295}
+                height={298}
+                alt=""
+              ></Image>
             </div>
           </Link>
 

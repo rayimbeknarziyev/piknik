@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
+import Image from "next/image";
 
 export default function Page() {
   const [firstName, setFirstName] = useState("");
@@ -46,10 +47,12 @@ export default function Page() {
   return (
     <div>
       <Header />
-
+      <div className="contact_png">
+        <Image width={1440} height={466} src="/contact.png" alt=""></Image>
+      </div>
       <div className="contact_section">
         <div className="left_contact">
-          <h1>Keling, biz bilan gaplashaylik</h1>
+          <h1 className="contact_title">Keling, biz bilan gaplashaylik</h1>
           <p className="contact_p">
             Savollar, sharhlar yoki takliflar? Shaklni to'ldiring va biz tez
             orada bog'lanamiz.

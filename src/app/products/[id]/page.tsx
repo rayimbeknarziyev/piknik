@@ -26,7 +26,7 @@ export default function Page() {
     if (!id) return;
 
     axios
-      .get(`https://690f1e9445e65ab24ac29473.mockapi.io/products/${id}`)
+      .get(`${process.env.NEXT_PUBLIC_API}/products/${id}`)
       .then((res) => {
         setProduct(res.data);
         if (res.data.images && res.data.images.length > 0) {

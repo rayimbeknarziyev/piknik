@@ -10,7 +10,6 @@ export default function Product() {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [open, setOpen] = useState(false);
 
-  // har biri alohida state
   const [image1, setImage1] = useState("");
   const [image2, setImage2] = useState("");
   const [image3, setImage3] = useState("");
@@ -22,7 +21,7 @@ export default function Product() {
   const [price, setPrice] = useState<number | "">("");
   const [category, setCategory] = useState("");
 
-  const api = "https://690f1e9445e65ab24ac29473.mockapi.io/products";
+  const api = `${process.env.NEXT_PUBLIC_API}/products`;
 
   function getProducts() {
     axios

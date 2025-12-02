@@ -19,6 +19,12 @@ export default function page() {
           <h1 className="product_title">Kategoriya va Mahsulotlar</h1>
           <div className="buton_wrapper">
             <button
+              className={`categories_button`}
+              onClick={() => setActiveCategory("")}
+            >
+              Hammasi
+            </button>
+            <button
               className="categories_button"
               onClick={() => setActiveCategory("chodir")}
             >

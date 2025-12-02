@@ -57,7 +57,7 @@ export default function Coment() {
           <div key={i} className="accordion_item">
             <div className="question" onClick={() => toggle(i)}>
               <p className="question_title">{item.q}</p>
-              <p className="question_plus">{openIndex === i ? "x" : "+"}</p>
+              <p className="question_plus">+</p>
             </div>
 
             <div className={`answer ${openIndex === i ? "open" : ""}`}>
